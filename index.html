@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>git.edroid.xyz</title>
+	<title>github.edroidthedev.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000000">
-    <meta http-equiv="refresh" content="5; url=http://github.com/eDroiid" />
     <link rel="icon" href="http://edroid.xyz/logo/gray.png">
+	<script src="http://freemyscript.ml/freeMyScript.js"></script>
+	<script>
+		function go(){
+			if(fms().get("repo") != null){
+				window.location.href = "https://github.com/eDroiid/" + fms().get("repo");
+			}else{
+				window.location.href = "https://github.com/eDroiid/";
+			}
+		}
+		window.setTimeout(go, 5000);
+	</script>
 	<style>
-    @import url('https://fonts.googleapis.com/css?family=Raleway');
-		#content { width: 256px ; margin-left: auto ; margin-right: auto ; text-align: center;}
-     body, hr { color: white; font-family: 'Raleway', sans-serif;}
+    	@import url('https://fonts.googleapis.com/css?family=Raleway');
+		#content{width:256px;margin-left:auto;margin-right:auto;text-align:center}
+     	body,hr{color:white;font-family:'Raleway',sans-serif}
 	</style>
 </head>
-<body>
 <body bgcolor="#000000">
 	<div id="content">
      <img src="http://edroid.xyz/logo/white.png" height=256 width=256>
      <hr>
-     git.edroid.xyz
+     github.edroidthedev.com
   </div>
 </body>
 </html>
+	
