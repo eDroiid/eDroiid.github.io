@@ -10,17 +10,17 @@
 		function go(){
 			var repo = fms().get("repo");
 			if(repo != null){
-				var x = repo.slice("/");
-				if(x.length < 1){
+				var x = repo.split("/");
+				if(x.length < 2){
 					window.location.href = "https://github.com/eDroiid/" + repo;
 				}else{
 					var link = "https://github.com/eDroiid/" + x[0] + "/blob/master";
-					for(var i = 1; i < (x.length - 1); i++){
+					x.shift();
+					for(var i = 0; i < x.length; i++){
 						var p = "/" + x[i];
 						link += p;
 					}
-					alert(link);
-					//window.location.href = link;
+					window.location.href = link;
 				}
 			}else{
 				window.location.href = "https://github.com/eDroiid/";
@@ -28,20 +28,6 @@
 		}
 		window.setTimeout(go, 5000);
 	</script>
-	<!--<script>
-		function go(){
-			var repo = fms().get("repo");
-			var file = fms().get("file");
-			if(repo != null){
-				if(file != null){
-					window.location.href = "https://github.com/eDroiid/" + repo + "/blob/master" + file;
-				}else{
-					window.location.href = "https://github.com/eDroiid/" + repo;
-				}
-			}
-		}
-		window.setTimeout(go, 5000);
-	</script>-->
 	<style>
     	@import url('https://fonts.googleapis.com/css?family=Raleway');
 		#content{width:256px;margin-left:auto;margin-right:auto;text-align:center}
