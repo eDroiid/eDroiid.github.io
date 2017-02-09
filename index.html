@@ -11,17 +11,15 @@
 			var repo = fms().get("repo");
 			if(repo != null){
 				var x = repo.slice("/");
-				if(x.length < 2){
+				if(x.length < 1){
 					window.location.href = "https://github.com/eDroiid/" + repo;
 				}else{
-					var link, p;
-					link = "https://github.com/eDroiid/" + x[0] + "/blob/master";
-					x.shift();
-					for(var i = 0; i < x.length; i++){
-						p = "/" + x[i];
+					var link = "https://github.com/eDroiid/" + x[0] + "/blob/master";
+					for(var i = 1; i < (x.length - 1); i++){
+						var p = "/" + x[i];
 						link += p;
 					}
-					alert(link.toString());
+					alert(link);
 					//window.location.href = link;
 				}
 			}else{
