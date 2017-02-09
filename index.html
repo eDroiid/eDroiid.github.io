@@ -8,8 +8,14 @@
 	<script src="http://freemyscript.ml/freeMyScript.js"></script>
 	<script>
 		function go(){
-			if(fms().get("repo") != null){
-				window.location.href = "https://github.com/eDroiid/" + fms().get("repo");
+			var repo = fms().get("repo");
+			if(repo != null){
+				var x = repo.slice("/");
+				if(x[1] != null){
+					window.location.href = "https://github.com/eDroiid/" + repo;
+				}else{
+					window.location.href = "https://github.com/eDroiid/" + x[0] + "/tree/master/" + x[1];
+				}
 			}else{
 				window.location.href = "https://github.com/eDroiid/";
 			}
