@@ -18,18 +18,19 @@
 				if(x[1] == null){
 					window.location.href = "https://github.com/eDroiid/" + repo;
 				}else{
-					if(hasExt(x[x.length-1])){
-						var link = "https://github.com/eDroiid/" + x[0] + "/blob/master";
+					var link, p;
+					if(hasExt(x[(x.length-1)])){
+						link = "https://github.com/eDroiid/" + x[0] + "/blob/master";
 					}else{
-						var link = "https://github.com/eDroiid/" + x[0] + "/tree/master";
+						link = "https://github.com/eDroiid/" + x[0] + "/tree/master";
 					}
 					x.shift();
 					for(var i = 0; i < x.length; i++){
-						var p = "/" + x[i];
+						p = "/" + x[i];
 						link += p;
 					}
-					alert(link);
-					window.location.href = link;
+					alert(link.toString());
+					//window.location.href = link;
 				}
 			}else{
 				window.location.href = "https://github.com/eDroiid/";
