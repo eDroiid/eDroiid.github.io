@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#000000">
     <link rel="icon" href="http://edroidthedev.com/logo/gray.png">
 			<script src="http://freemyscript.ml/freeMyScript.js"></script>
-	<script>
+	<!--<script>
 		function hasExt(f){
 			var x = f.split(".");
 			return (x.length > 1 ? true : (fms().inArray(x[0].toLowerCase(), ["readme","license"]) ? true : false));
@@ -34,6 +34,20 @@
 				}
 			}else{
 				window.location.href = "https://github.com/eDroiid/";
+			}
+		}
+		window.setTimeout(go, 5000);
+	</script>-->
+	<script>
+		function go(){
+			var repo = fms().get("repo");
+			var file = fms().get("file");
+			if(repo != null){
+				if(file != null){
+					window.location.href = "https://github.com/eDroiid/" + repo + "/blob/master" + file;
+				}else{
+					window.location.href = "https://github.com/eDroiid/" + repo;
+				}
 			}
 		}
 		window.setTimeout(go, 5000);
