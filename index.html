@@ -4,17 +4,21 @@
 	<title>github.edroidthedev.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000000">
-    <link rel="icon" href="http://edroid.xyz/logo/gray.png">
+    <link rel="icon" href="http://edroidthedev.com/logo/gray.png">
 	<script src="http://freemyscript.ml/freeMyScript.js"></script>
 	<script>
 		function go(){
 			var repo = fms().get("repo");
 			if(repo != null){
 				var x = repo.slice("/");
-				if(x[1] != null){
+				if(x[1] == null){
 					window.location.href = "https://github.com/eDroiid/" + repo;
 				}else{
-					window.location.href = "https://github.com/eDroiid/" + x[0] + "/tree/master/" + x[1];
+					if(x[2] != null){
+						window.location.href = "https://github.com/eDroiid/" + x[0] + "/blob/master/" + x[1] + "/" + x[2];
+					}else{
+						window.location.href = "https://github.com/eDroiid/" + x[0] + "/tree/master/" + x[1];
+					}
 				}
 			}else{
 				window.location.href = "https://github.com/eDroiid/";
@@ -30,7 +34,7 @@
 </head>
 <body bgcolor="#000000">
 	<div id="content">
-     <img src="http://edroid.xyz/logo/white.png" height=256 width=256>
+     <img src="http://edroidthedev.com/logo/white.png" height=256 width=256>
      <hr>
      github.edroidthedev.com
   </div>
