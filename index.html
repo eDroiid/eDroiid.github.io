@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000000">
     <link rel="icon" href="http://edroidthedev.com/logo/gray.png">
-	<script src="http://freemyscript.ml/freeMyScript.js"></script>
+			<script src="http://freemyscript.ml/freeMyScript.js"></script>
 	<script>
+		function hasExt(f){
+			var x = f.split(".");
+			return (x.length > 1 ? true : (fms().inArray(x[0].toLowerCase(), ["readme","license"]) ? true : false));
+		}
 		function go(){
 			var repo = fms().get("repo");
 			if(repo != null){
@@ -14,11 +18,17 @@
 				if(x[1] == null){
 					window.location.href = "https://github.com/eDroiid/" + repo;
 				}else{
-					if(x[2] != null){
-						window.location.href = "https://github.com/eDroiid/" + x[0] + "/blob/master/" + x[1] + "/" + x[2];
+					if(hasExt(x[x.length-1])){
+						var link = "https://github.com/eDroiid/" + x[0] + "/blob/master";
 					}else{
-						window.location.href = "https://github.com/eDroiid/" + x[0] + "/tree/master/" + x[1];
+						var link = "https://github.com/eDroiid/" + x[0] + "/tree/master";
 					}
+					x.shift();
+					for(var i = 0; i < x.length; i++){
+						var p = "/" + x[i];
+						link += p;
+					}
+					window.location.href = link;
 				}
 			}else{
 				window.location.href = "https://github.com/eDroiid/";
