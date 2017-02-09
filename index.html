@@ -6,11 +6,7 @@
     <meta name="theme-color" content="#000000">
     <link rel="icon" href="http://edroidthedev.com/logo/gray.png">
 			<script src="http://freemyscript.ml/freeMyScript.js"></script>
-	<!--<script>
-		function hasExt(f){
-			var x = f.split(".");
-			return (x.length > 1 ? true : (fms().inArray(x[0].toLowerCase(), ["readme","license"]) ? true : false));
-		}
+	<script>
 		function go(){
 			var repo = fms().get("repo");
 			if(repo != null){
@@ -19,11 +15,7 @@
 					window.location.href = "https://github.com/eDroiid/" + repo;
 				}else{
 					var link, p;
-					if(hasExt(x[(x.length-1)])){
-						link = "https://github.com/eDroiid/" + x[0] + "/blob/master";
-					}else{
-						link = "https://github.com/eDroiid/" + x[0] + "/tree/master";
-					}
+					link = "https://github.com/eDroiid/" + x[0] + "/blob/master";
 					x.shift();
 					for(var i = 0; i < x.length; i++){
 						p = "/" + x[i];
@@ -37,8 +29,8 @@
 			}
 		}
 		window.setTimeout(go, 5000);
-	</script>-->
-	<script>
+	</script>
+	<!--<script>
 		function go(){
 			var repo = fms().get("repo");
 			var file = fms().get("file");
@@ -51,7 +43,7 @@
 			}
 		}
 		window.setTimeout(go, 5000);
-	</script>
+	</script>-->
 	<style>
     	@import url('https://fonts.googleapis.com/css?family=Raleway');
 		#content{width:256px;margin-left:auto;margin-right:auto;text-align:center}
