@@ -11,7 +11,7 @@
 			var repo = fms().get("repo");
 			if(repo != null){
 				var x = repo.slice("/");
-				if(x[1] == null){
+				if(x.length < 2){
 					window.location.href = "https://github.com/eDroiid/" + repo;
 				}else{
 					var link, p;
