@@ -2,13 +2,20 @@
 <html>
 <head>
 	<title>github.edroidthedev.com</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#000000">
-    <link rel="icon" href="http://edroidthedev.com/logo/gray.png">
-			<script src="http://freemyscript.ml/freeMyScript.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#000000">
+	<link rel="icon" href="http://edroidthedev.com/logo/gray.png">
 	<script>
+		(function get_params_declare(){
+			var parts = window.location.search.substr(1).split("&");
+			window.$_GET = {};
+			for (var i = 0; i < parts.length; i++) {
+			    var temp = parts[i].split("=");
+			    window.$_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
+			}
+		})();
 		function go(){
-			var repo = fms().get("repo");
+			var repo = $_GET["repo"];
 			if(repo != null){
 				var x = repo.split("/");
 				if(x.length < 2){
@@ -27,19 +34,23 @@
 			}
 		}
 		window.setTimeout(go, 5000);
+		
+		window.onload = function(){
+			domain.innerText = location.hostname;
+		};
 	</script>
 	<style>
-    	@import url('https://fonts.googleapis.com/css?family=Raleway');
+		@import url('https://fonts.googleapis.com/css?family=Raleway');
 		#content{width:256px;margin-left:auto;margin-right:auto;text-align:center}
-     	body,hr{color:white;font-family:'Raleway',sans-serif}
+		body,hr{color:white;font-family:'Raleway',sans-serif}
 	</style>
 </head>
 <body bgcolor="#000000">
 	<div id="content">
-     <img src="http://edroidthedev.com/logo/white.png" height=256 width=256>
-     <hr>
-     github.edroidthedev.com
-  </div>
+		<img src="http://edroid.tk/logo/white.png" height=256 width=256>
+		<hr>
+		<span id="domain"></span>
+	</div>
 </body>
 </html>
-	
+
